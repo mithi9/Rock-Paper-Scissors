@@ -4,12 +4,8 @@ function computerPlay(){
 }
 
 let choice = ['rock','paper','scissors'];
-let playerSelection = prompt('Pick between rock, papaer, or scissors','').toLowerCase();
-let computerSelection = computerPlay();
-
-let sum = playRound(playerSelection,computerSelection);
-
-console.log(sum);
+let playerSelection;
+let computerSelection;
 
 function playRound(playerSelection, computerSelection){
     
@@ -52,3 +48,38 @@ function playRound(playerSelection, computerSelection){
 
 
 }
+
+
+game();
+
+function game(){
+    let sum = 0;
+    console.log(typeof(sum));
+
+    for (let i = 0; i < 5; i++) {
+        playerSelection = prompt('Pick between rock, papaer, or scissors','').toLowerCase();
+        console.log(playerSelection);
+        computerSelection = computerPlay();
+        console.log(computerSelection);
+        sum += playRound(playerSelection, computerSelection);
+        console.log(sum);
+     }
+    
+    if (sum>=1){
+        alert("You've won the game");
+        return;
+    }
+        else if (sum==0){
+            alert("The game was a draw");
+            return;
+    }
+        else{
+            alert("You lost the game");
+            return;
+    }
+    
+}
+
+
+
+
